@@ -22,4 +22,10 @@ while True:
 
     else:
         print("Invalid try again")
-print(players)
+        
+# print(players)
+
+max_score = 50
+player_scores = [0 for _ in range(players)] # pour chaque joueur, on place un "0" dans la liste des scores / range permet de boucler
+
+print(player_scores)
