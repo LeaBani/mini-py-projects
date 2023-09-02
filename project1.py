@@ -36,6 +36,7 @@ while max(player_scores) < max_score:
 
     for player_index in range(players):
         print("\nPlayer number", player_index + 1, "turn has started!\n") # \n ajoute un saut à la ligne
+        print("Your total score is:", player_scores[player_index], "\n") # j'affiche je score du joueur avant la partie
         while True:
             should_roll = input("Would you like to roll (y)?")
             if should_roll.lower() != "y": # on parse 
@@ -53,5 +54,9 @@ while max(player_scores) < max_score:
 
         player_scores[player_index] += current_score # j'incremente le score du joueur
         print("Your total score is:", player_scores[player_index]) # j'affiche le score du joueur
+
+max_score = max(player_scores)
+winning_index = player_scores.index(max_score)
+print("Player", winning_index + 1, "is the winner with the score of:", max_score)
 
 
