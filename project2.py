@@ -24,4 +24,16 @@ for i, char in enumerate(story):
         words.add(word) # on ajoute le word au set avec "add"
         start_of_word = -1 # on reset la variable une fois que le mot à été trouvé
 
-print(words)
+# print(words)
+
+answers = {} # je créé un dictionnaire de correspondance clé/valeur
+
+for word in words:
+    answer = input("Enter a word for " + word + ": ") # concatenation d'une string et d'une var
+    answers[word] = answer
+
+    # print(answers)
+for word in words:
+    story = story.replace(word, answers[word])
+
+    print(story)
