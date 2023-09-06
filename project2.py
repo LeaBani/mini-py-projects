@@ -8,7 +8,8 @@ with open("story.txt", "r") as f:
 
 # je veux voir quels mots sont entourés de <>
 
-words = []
+# words = []
+words = set() # permet de garder dans un set seules des valeurs uniques
 start_of_word = -1 # trouver l'index du mot
 target_start = "<"
 target_end = ">"
@@ -19,7 +20,8 @@ for i, char in enumerate(story):
 
     if char == target_end and start_of_word != -1: # si la fin du mot est égal à > ET que le début du mot est différent de -1 (soit égale à i dans la condition précédente)
         word = story[start_of_word: i + 1] # "slice character": on commence avec start of words, on termine à i +1
-        words.append(word) # on ajoute le word à la liste
+        # words.append(word) # on ajoute le word à la liste
+        words.add(word) # on ajoute le word au set avec "add"
         start_of_word = -1 # on reset la variable une fois que le mot à été trouvé
 
 print(words)
